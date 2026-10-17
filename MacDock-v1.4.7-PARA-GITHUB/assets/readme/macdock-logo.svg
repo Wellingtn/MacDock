@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="18" y1="12" x2="112" y2="116" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#74D7FF"/>
+      <stop offset="0.48" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="30" y1="20" x2="94" y2="102" gradientUnits="userSpaceOnUse">
+      <stop stop-color="rgba(255,255,255,0.95)" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#D9EEFF" stop-opacity="0.18"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="108" height="108" rx="30" fill="url(#bg)"/>
+  <rect x="12" y="12" width="104" height="104" rx="28" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+  <path d="M24 36C24 28.268 30.268 22 38 22H90C97.732 22 104 28.268 104 36V40H24V36Z" fill="url(#glass)" fill-opacity="0.45"/>
+  <rect x="24" y="46" width="80" height="48" rx="22" fill="rgba(7,18,38,0.24)" stroke="rgba(255,255,255,0.26)"/>
+  <rect x="31" y="55" width="14" height="14" rx="7" fill="#CFF7FF" fill-opacity="0.92"/>
+  <rect x="50" y="55" width="14" height="14" rx="7" fill="#CFF7FF" fill-opacity="0.82"/>
+  <rect x="69" y="55" width="14" height="14" rx="7" fill="#CFF7FF" fill-opacity="0.72"/>
+  <rect x="88" y="55" width="9" height="30" rx="4.5" fill="#FFD97A" fill-opacity="0.95"/>
+  <path d="M35 82C43.8 73.6 51.2 73.6 60 82C68.8 73.6 76.2 73.6 85 82" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="97" cy="31" r="5" fill="#F6F8FF" fill-opacity="0.65"/>
+</svg>
