@@ -86,11 +86,11 @@ A versão **1.4.7** está em fase de validação pública. O trabalho continua f
 ## Instalação
 
 1. Baixe o ZIP da extensão.
-2. No [GitHub Releases](https://github.com/Wellingtn/MacDock/releases), baixe o arquivo `MacDock-v1.4.7-INSTALAR.zip` (quando a versão for publicada).
+2. No [GitHub Releases](https://github.com/Wellingtn/MacDock/releases), baixe o arquivo `MacDock-dock` (quando a versão for publicada).
 3. Instale com:
 
 ```bash
-gnome-extensions install --force "$HOME/Downloads/MacDock-v1.4.7-INSTALAR.zip"
+gnome-extensions install --force "$HOME/Downloads/MacDock-dock.zip"
 ```
 
 4. Encerre a sessão do GNOME e entre novamente.
