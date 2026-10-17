@@ -1,53 +1,58 @@
-# Instalação e restauração — MacDock 1.4
+# Instalação e restauração — MacDock 1.4.7
 
-UUID: `macdock-weather-revisado@local`. A versão 1.4 atualiza esse mesmo UUID e mantém suas configurações e anotações.
+Este guia se refere à edição **pública**. O código-fonte pode ser consultado diretamente no [GitHub](https://github.com/Wellingtn/MacDock).
 
-## Nesta máquina
+- **Nome:** MacDock
+- **Versão:** 1.4.7
+- **UUID público:** `macdock@wellingtn.github.io`
+- **GNOME Shell:** 46 (outras versões ainda não validadas)
+- **Download:** anexo `MacDock-v1.4.7-INSTALAR.zip` na página [Releases](https://github.com/Wellingtn/MacDock/releases), **quando disponível**
 
-Os arquivos atualizados são instalados em:
-`~/.local/share/gnome-shell/extensions/macdock-weather-revisado@local/`
+## Atenção antes de instalar
 
-No GNOME/Wayland, salve seu trabalho, saia da sessão e entre novamente para carregar os módulos novos. Desativar e reativar a extensão não limpa o cache de módulos do Shell.
+O UUID público é diferente do UUID das versões de desenvolvimento (`macdock-weather-revisado@local`). Portanto, o GNOME trata os dois como **extensões distintas**. O pacote novo não substitui automaticamente a instalação antiga e não migra necessariamente suas configurações.
 
-## Instalar pelo pacote
+Não execute duas extensões de dock simultaneamente. Faça backup de sua instalação e configurações se desejar poder voltar à versão de desenvolvimento.
 
-Na pasta do projeto:
+## Instalar
+
+Baixe o **anexo instalável** da Release, não o arquivo automático *Source code (zip)*. Com o ZIP na pasta Downloads:
 
 ```bash
-gnome-extensions install --force dist/MacDock-Clima-v1.4.1.zip
+gnome-extensions install --force "$HOME/Downloads/MacDock-v1.4.7-INSTALAR.zip"
 ```
 
-Saia e entre na sessão. Se necessário, habilite:
+No GNOME/Wayland, encerre a sessão e entre novamente. Se necessário:
 
 ```bash
+gnome-extensions enable macdock@wellingtn.github.io
+```
+
+Se outra extensão de dock estiver ativa, desative-a pelo gerenciador de extensões antes de habilitar o MacDock público.
+
+## Backup e retorno à instalação anterior
+
+A versão pública usa a pasta:
+
+```text
+~/.local/share/gnome-shell/extensions/macdock@wellingtn.github.io/
+```
+
+A edição antiga de desenvolvimento usa:
+
+```text
+~/.local/share/gnome-shell/extensions/macdock-weather-revisado@local/
+```
+
+Para voltar à versão antiga, desative o MacDock público e reative a extensão de desenvolvimento **somente se ela ainda estiver instalada**:
+
+```bash
+gnome-extensions disable macdock@wellingtn.github.io
 gnome-extensions enable macdock-weather-revisado@local
 ```
 
-Mantenha apenas uma extensão de dock ativa. Não altere as configurações do Liquid Glass para aplicar esta atualização: o material original foi preservado.
+Encerre a sessão e entre novamente. Este procedimento não sobrescreve as configurações; não restaure valores do `dconf` sem necessidade.
 
-## Restaurar a versão anterior
+## Status de validação
 
-Backup criado antes da instalação:
-`~/.local/share/macdock-backups/antes-da-versao-1.4-2026-10-17/`
-
-```bash
-gnome-extensions disable macdock-weather-revisado@local
-tar -xzf ~/.local/share/macdock-backups/antes-da-versao-1.4-2026-10-17/extensao-1.3.tar.gz -C ~/.local/share/gnome-shell/extensions/
-```
-
-Saia e entre na sessão; então habilite a extensão. Os arquivos adicionais da versão nova não são importados pela versão antiga.
-
-O backup `configuracoes.dconf` registra as configurações anteriores. A atualização não modifica essas configurações; só restaure esse arquivo se também quiser desfazer escolhas feitas posteriormente:
-
-```bash
-dconf load /org/gnome/shell/extensions/macdock-weather-prototype/ < ~/.local/share/macdock-backups/antes-da-versao-1.4-2026-10-17/configuracoes.dconf
-```
-
-## Testes
-
-```bash
-node tools/check.mjs
-python3 tools/test-headless.py
-```
-
-O segundo comando usa um GNOME temporário e um player de teste, em sessão privada. Nenhum auxiliar de testes é instalado na sessão pessoal. Veja também [MELHORIAS-1.4.md](MELHORIAS-1.4.md).
+A presença do código no GitHub não comprova a compatibilidade em todas as instalações. Antes de publicar no GNOME Extensions, confirme pelo menos instalação, ativação, abertura das preferências, widgets e desativação no GNOME 46. Relate problemas em [Issues](https://github.com/Wellingtn/MacDock/issues).
